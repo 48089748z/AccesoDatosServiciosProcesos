@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ROWSET" type="ROWSETType"/>
+  <xs:complexType name="ROWSETType">
+    <xs:sequence>
+      <xs:element type="ROWType" name="ROW" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ROWType">
+    <xs:sequence>
+      <xs:element name="CODI_CARRER">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="000102"/>
+            <xs:enumeration value="000180"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="CODI_CARRER_INE"/>
+      <xs:element type="xs:string" name="SIGLA"/>
+      <xs:element name="NOM_OFICIAL">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Carrer dels Llebrencs"/>
+            <xs:enumeration value="Carrer A Zona Franca"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NOM_CURT">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Llebrencs"/>
+            <xs:enumeration value="A"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="NRE_MIN"/>
+      <xs:element type="xs:string" name="NRE_MAX"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
