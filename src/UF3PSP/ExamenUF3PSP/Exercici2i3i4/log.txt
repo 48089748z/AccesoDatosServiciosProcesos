@@ -1,0 +1,67 @@
+
+Wed Mar 09 16:45:27 CET 2016  Creando Server Socket.
+Wed Mar 09 16:45:27 CET 2016  Creando InetSocketAddress.
+Wed Mar 09 16:45:27 CET 2016  Haciendo el bind.
+Wed Mar 09 16:45:28 CET 2016  Haciendo el accept
+Wed Mar 09 16:45:28 CET 2016  Iniciando el Thread.
+Wed Mar 09 16:45:28 CET 2016  Cogiendo el InputStream del Socket.
+Wed Mar 09 16:45:28 CET 2016  Cogiendo el OutPutStream del Socket.
+Wed Mar 09 16:45:28 CET 2016  Escribiendo en el navegador.
+Wed Mar 09 16:45:28 CET 2016  Cerrando Sockets, Input y Output.
+Wed Mar 09 16:49:40 CET 2016  Creando Server Socket.
+Wed Mar 09 16:49:40 CET 2016  Creando InetSocketAddress.
+Wed Mar 09 16:49:40 CET 2016  Haciendo el bind.
+Wed Mar 09 16:49:43 CET 2016  Haciendo el accept
+Wed Mar 09 16:49:43 CET 2016  Iniciando el Thread.
+Wed Mar 09 16:49:43 CET 2016  Cogiendo el InputStream del Socket.
+Wed Mar 09 16:49:43 CET 2016  Cogiendo el OutPutStream del Socket.
+Wed Mar 09 16:49:43 CET 2016  Escribiendo en el navegador.
+Wed Mar 09 16:49:43 CET 2016  Cerrando Sockets, Input y Output.
+Wed Mar 09 16:50:01 CET 2016  Creando Server Socket.
+Wed Mar 09 16:50:01 CET 2016  Creando InetSocketAddress.
+Wed Mar 09 16:50:01 CET 2016  Haciendo el bind.
+Wed Mar 09 16:50:03 CET 2016  Haciendo el accept
+Wed Mar 09 16:50:03 CET 2016  Iniciando el Thread.
+Wed Mar 09 16:50:03 CET 2016  Cogiendo el InputStream del Socket.
+Wed Mar 09 16:50:03 CET 2016  Cogiendo el OutPutStream del Socket.
+Wed Mar 09 16:50:03 CET 2016  Escribiendo en el navegador.
+Wed Mar 09 16:50:03 CET 2016  Cerrando Sockets, Input y Output.
+Wed Mar 09 16:50:46 CET 2016  Creando Server Socket.
+Wed Mar 09 16:50:46 CET 2016  Creando InetSocketAddress.
+Wed Mar 09 16:50:46 CET 2016  Haciendo el bind.
+Wed Mar 09 16:50:48 CET 2016  Haciendo el accept
+Wed Mar 09 16:50:48 CET 2016  Iniciando el Thread.
+Wed Mar 09 16:50:48 CET 2016  Cogiendo el InputStream del Socket.
+Wed Mar 09 16:50:48 CET 2016  Cogiendo el OutPutStream del Socket.
+Wed Mar 09 16:50:48 CET 2016  Escribiendo en el navegador.
+Wed Mar 09 16:50:50 CET 2016  Cerrando Sockets, Input y Output.
+Wed Mar 09 16:51:04 CET 2016  Creando Server Socket.
+Wed Mar 09 16:51:04 CET 2016  Creando InetSocketAddress.
+Wed Mar 09 16:51:04 CET 2016  Haciendo el bind.
+Wed Mar 09 16:51:04 CET 2016  Haciendo el accept
+Wed Mar 09 16:51:04 CET 2016  Iniciando el Thread.
+Wed Mar 09 16:51:04 CET 2016  Cogiendo el InputStream del Socket.
+Wed Mar 09 16:51:04 CET 2016  Cogiendo el OutPutStream del Socket.
+Wed Mar 09 16:51:04 CET 2016  Escribiendo en el navegador.
+Wed Mar 09 16:51:06 CET 2016  Cerrando Sockets, Input y Output.
+Wed Mar 09 16:51:51 CET 2016  Creando Server Socket.
+Wed Mar 09 16:51:51 CET 2016  Creando InetSocketAddress.
+Wed Mar 09 16:51:51 CET 2016  Haciendo el bind.
+Wed Mar 09 16:51:53 CET 2016  Haciendo el accept
+Wed Mar 09 16:51:53 CET 2016  Iniciando el Thread.
+Wed Mar 09 16:51:53 CET 2016  Cogiendo el InputStream del Socket.
+Wed Mar 09 16:51:53 CET 2016  Cogiendo el OutPutStream del Socket.
+Wed Mar 09 16:51:53 CET 2016  Escribiendo en el navegador.
+Wed Mar 09 16:51:53 CET 2016  Cerrando Sockets, Input y Output.
+Wed Mar 09 16:54:13 CET 2016  Creando Server Socket.
+Wed Mar 09 16:54:13 CET 2016  Creando InetSocketAddress.
+Wed Mar 09 16:54:13 CET 2016  Haciendo el bind.
+Wed Mar 09 16:54:15 CET 2016  Haciendo el accept
+Wed Mar 09 16:54:15 CET 2016  Iniciando el Thread.
+Wed Mar 09 16:54:15 CET 2016  Cogiendo el InputStream del Socket.
+Wed Mar 09 16:54:15 CET 2016  Cogiendo el OutPutStream del Socket.
+Wed Mar 09 16:54:15 CET 2016  Escribiendo en el navegador.
+
+Wed Mar 09 16:54:15 CET 2016  Es una Petición GET
+
+Wed Mar 09 16:54:15 CET 2016  Cerrando Sockets, Input y Output.
