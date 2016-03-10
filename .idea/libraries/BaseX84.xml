@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="BaseX84">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../LIBRERIAS/BaseX84.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LIBRERIAS/DB40.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LIBRERIAS/JAVAMAIL.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LIBRERIAS/JSON-SIMPLE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LIBRERIAS/POSTGRESQL-JDBC.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LIBRERIAS/SQLITE-JDBC.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$PROJECT_DIR$/../../LIBRERIAS/XMLDB" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../LIBRERIAS/SQLITE-JDBC.jar!/" />
+      <root url="file://$PROJECT_DIR$/src" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../LIBRERIAS/XMLDB" recursive="false" />
+  </library>
+</component>

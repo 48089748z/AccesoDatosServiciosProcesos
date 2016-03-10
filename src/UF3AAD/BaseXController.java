@@ -41,7 +41,7 @@ public class BaseXController
                 }
                 case 2:
                 {
-                    executeQueryAndOutPrintResult(document+"count(/mondial/country/name)");
+                    executeQueryAndOutPrintResult(document+"/count(/mondial/country/name)");
                     break;
                 }
                 case 3:
