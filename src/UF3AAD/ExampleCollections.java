@@ -6,13 +6,8 @@ import org.xmldb.api.base.Database;
 import org.xmldb.api.base.Resource;
 import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.CollectionManagementService;
-
 import javax.xml.xquery.*;
 import java.io.File;
-
-/**
- * Created by dremon on 10/03/16.
- */
 public class ExampleCollections
 {
     private static final String adminUsername = "admin";
