@@ -19,5 +19,7 @@
     <orderEntry type="library" name="HIBERNATE" level="project" />
     <orderEntry type="library" name="BaseX84" level="project" />
     <orderEntry type="library" name="commons-io-2.4" level="project" />
+    <orderEntry type="library" name="XMLDB" level="project" />
+    <orderEntry type="library" name="XQJCollections" level="project" />
   </component>
 </module>

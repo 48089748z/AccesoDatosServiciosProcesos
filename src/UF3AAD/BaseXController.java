@@ -28,7 +28,7 @@ public class BaseXController {
             {
                 //A FACTBOOK SERIA     (factbook+"/factbook/record/country")
                 case 1: {executeQueryAndOutPrintResult(mondial +"/mondial/country/name");break;}
-                case 2: {executeQueryAndOutPrintResult(mondial +"/count(/mondial/country/name)");break;}
+                case 2: {executeQueryAndOutPrintResult(mondial +"/count(/mondial/country)");break;}
                 case 3: {executeQueryAndOutPrintResult(mondial +"/mondial/country[name='Germany']");break;}
                 case 4: {executeQueryAndOutPrintResult(mondial +"/mondial/country[name='Uganda']/@population");break;}
                 case 5: {executeQueryAndOutPrintResult(mondial +"/mondial/country[name='Peru']/province/city/name");break;}
