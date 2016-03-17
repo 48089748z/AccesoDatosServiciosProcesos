@@ -1,5 +1,4 @@
 package UF3AAD;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import net.xqj.exist.ExistXQDataSource;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
@@ -20,6 +19,7 @@ public class ExistsDBController
     private static final String IP = "172.31.101.225";
     private static final String URI = "xmldb:exist://"+IP+":"+ PORT +"/exist/xmlrpc";
     private static final String driver = "org.exist.xmldb.DatabaseImpl";
+
     public static void main(String args[])
     {
         try
@@ -36,11 +36,11 @@ public class ExistsDBController
             String[] results = queryResource("collection('oriolDB')/CATALOG/PLANT/COMMON/").replaceAll("</COMMON>","").split("<COMMON>");
             for (String result: results) {System.out.print(result);}
         }
-        catch (XMLDBException e)         {System.out.println("XMLDBException: " + e);}
-        catch (ClassNotFoundException e) {System.out.println("ClassNotFoundException: " + e);}
-        catch (IllegalAccessException e) {System.out.println("IllegalAccessException: " + e);}
-        catch (InstantiationException e) {System.out.println("InstantiationException: " + e);}
-        catch (XQException e)            {System.out.println("XQException: " + e);}
+        catch (XMLDBException e)          {System.out.println("XMLDBException: " + e);}
+        catch (ClassNotFoundException e)  {System.out.println("ClassNotFoundException: " + e);}
+        catch (IllegalAccessException e)  {System.out.println("IllegalAccessException: " + e);}
+        catch (InstantiationException e)  {System.out.println("InstantiationException: " + e);}
+        catch (XQException e)             {System.out.println("XQException: " + e);}
     }
 
     private static void createCollection() throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
