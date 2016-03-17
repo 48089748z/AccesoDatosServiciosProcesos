@@ -1,4 +1,5 @@
 package UF3AAD;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import net.xqj.exist.ExistXQDataSource;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
@@ -32,7 +33,7 @@ public class ExistsDBController
             System.out.println("RESOURCE ADDED SUCCESSFULLY");
 
             //QUERY SOBRE LOS ARCHIVOS DE NUESTRA COLECCIÓN (PARA ORDENARLOS PODEMOS METERLOS EN UN ARRAY CON UN SPLIT)
-            String[] results = queryResource("collection('oriolDB')/CATALOG/PLANT/COMMON").replaceAll("</COMMON>","").split("<COMMON>");
+            String[] results = queryResource("collection('oriolDB')/CATALOG/PLANT/COMMON/").replaceAll("</COMMON>","").split("<COMMON>");
             for (String result: results) {System.out.print(result);}
         }
         catch (XMLDBException e)         {System.out.println("XMLDBException: " + e);}
