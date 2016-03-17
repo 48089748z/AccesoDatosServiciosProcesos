@@ -8,7 +8,7 @@ import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.CollectionManagementService;
 import javax.xml.xquery.*;
 import java.io.File;
-public class ExampleCollections
+public class ExistsDBController
 {
     private static final String adminUsername = "admin";
     private static final String adminPassword = "dionis";
@@ -41,23 +41,7 @@ public class ExampleCollections
         catch (InstantiationException e) {System.out.println("InstantiationException: " + e);}
         catch (XQException e)            {System.out.println("XQException: " + e);}
     }
-    private static void addResourceToCollection() throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
-    {
-        //CONEXIÓN
-        Class clas = Class.forName(driver);
-        Database database = (Database) clas.newInstance();
-        database.setProperty("create-database", "true");
-        DatabaseManager.registerDatabase(database);
 
-        //INSTANCIAR COLECCIÓN A LA QUE AÑADIREMOS EL RECURSO
-        Collection collection = DatabaseManager.getCollection(URI+ mainCollection +myCollection, adminUsername, adminPassword);
-
-        //AÑADIR EL RECURSO
-        File file = new File(filePath);
-        Resource resource = collection.createResource(filePath, "XMLResource");
-        resource.setContent(file);
-        collection.storeResource(resource);
-    }
     private static void createCollection() throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
     {
         //CONEXIÓN
@@ -67,10 +51,29 @@ public class ExampleCollections
         DatabaseManager.registerDatabase(database);
 
         //CREAR COLECCIÓN NUEVA
-        Collection parent = DatabaseManager.getCollection(URI+ mainCollection, adminUsername, adminPassword);
+        Collection parent = DatabaseManager.getCollection(URI+mainCollection, adminUsername, adminPassword);
         CollectionManagementService c = (CollectionManagementService) parent.getService("CollectionManagementService", "1.0");
         c.createCollection("uriCollection");
     }
+
+    private static void addResourceToCollection() throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
+    {
+        //CONEXIÓN
+        Class clas = Class.forName(driver);
+        Database database = (Database) clas.newInstance();
+        database.setProperty("create-database", "true");
+        DatabaseManager.registerDatabase(database);
+
+        //INSTANCIAR COLECCIÓN A LA QUE AÑADIREMOS EL RECURSO
+        Collection collection = DatabaseManager.getCollection(URI+mainCollection+myCollection, adminUsername, adminPassword);
+
+        //AÑADIR EL RECURSO
+        File file = new File(filePath);
+        Resource resource = collection.createResource(filePath, "XMLResource");
+        resource.setContent(file);
+        collection.storeResource(resource);
+    }
+
     private static String queryResource(String query) throws XQException
     {
         //CONEXIÓN
