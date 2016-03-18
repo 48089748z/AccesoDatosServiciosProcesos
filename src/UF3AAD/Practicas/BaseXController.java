@@ -1,4 +1,4 @@
-package UF3AAD;
+package UF3AAD.Practicas;
 import org.basex.api.client.ClientSession;
 import java.io.IOException;
 import java.util.InputMismatchException;
