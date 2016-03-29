@@ -13,6 +13,9 @@ public class ServerController
             ServerSocket serverSocket = new ServerSocket();
             InetSocketAddress address = new InetSocketAddress("0.0.0.0", 9090); //LE DECIMOS QUE SERA ACCESIBLE EN EL PUERTO 9090
             serverSocket.bind(address);
+
+            //while (true)  ESTO NO TE LO DISCUTO SE ME HA OLVIDAO Y ME CALLO
+
             Socket socket = serverSocket.accept(); //BIND I ACCEPT
             ServerThread thread = new ServerThread(socket);
             thread.start(); //INICIAMOS EL THREAD
