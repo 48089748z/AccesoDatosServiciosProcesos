@@ -7,8 +7,11 @@ import java.util.Scanner;
  */
 public class EncriptadorMorse
 {
+
+    //DIONIS                                                        YO
+    //CLAVE PUBLICA      <---   ENVIO DOCUMENTO (ENCRIPTADO)        (LA PUEDO USAR PARA ENVIARLE UN MENSAJE ENCRIPTADO, SOLO DESCIFRABLE POR SU CLAVE PRIVADA)
+    //CLAVE PRIVADA      ENVIA DOCUMENTO (NO ENCRIPTA!) --->        (SI LO PUEDO DESENCRIPTAR CON SU CLAVE PUBLICA ES SUYO)
     private static Scanner in = new Scanner(System.in);
-    private static String[] characters;
     public static void main(String[] args)
     {
         System.out.println("\nINTRODUCE UNA FRASE PARA CODIFICAR");
