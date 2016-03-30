@@ -16,37 +16,23 @@ public class EncriptadorMorse
 
         System.out.println("\nFRASE ORIGINAL\n"+cadena);
 
-        cadena = textToMorse(cadena);
+        cadena = Text2Morse(cadena);
         System.out.println("\nFRASE CODIFICADA A MORSE\n"+cadena);
 
-        cadena = morseToText(cadena);
+        cadena = Morse2Text(cadena);
         System.out.println("\nFRASE DECODIFICADA DE MORSE\n"+cadena);
     }
-    public static String textToMorse(String toTranslate)
+    public static String Text2Morse(String text)
     {
         String toReturn = "";
-        try
-        {
-            for (int x=0; x<toTranslate.length(); x++)
-            {
-                toReturn = toReturn + encode(String.valueOf(toTranslate.charAt(x)))+" ";
-            }
-            return toReturn;
-        }
-        catch(Exception lenght0)
-        {
-            return "";
-        }
-
+        for (int x=0; x<text.length(); x++) {toReturn = toReturn + encode(String.valueOf(text.charAt(x)))+" ";}
+        return toReturn;
     }
-    public static String morseToText(String morseCode)
+    public static String Morse2Text(String morse)
     {
         String toReturn = "";
-        String[] codes = morseCode.split(" ");
-        for (int x=0; x<codes.length; x++)
-        {
-            toReturn=toReturn+decode(codes[x]);
-        }
+        String[] codes = morse.split(" ");
+        for (int x=0; x<codes.length; x++) {toReturn=toReturn+decode(codes[x]);}
         return toReturn;
     }
     public static String decode(String morse)
@@ -92,9 +78,9 @@ public class EncriptadorMorse
             default: {return " ";}
         }
     }
-    public static String encode(String character)
+    public static String encode(String text)
     {
-        switch (character.toUpperCase())
+        switch (text.toUpperCase())
         {
             case "0":{return "-----";}
             case "1":{return ".----";}
