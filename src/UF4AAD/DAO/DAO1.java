@@ -8,7 +8,9 @@ import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.CollectionManagementService;
 import javax.xml.xquery.*;
 import java.io.File;
-public class DAO1
+import java.io.Serializable;
+
+public class DAO1 implements Serializable
 {
     private static final String driver = "org.exist.xmldb.DatabaseImpl";
     private String URI;
@@ -108,5 +110,36 @@ public class DAO1
         Database database = (Database) clas.newInstance();
         database.setProperty("create-database", "true");
         DatabaseManager.registerDatabase(database);
+    }
+    public DAO1(){
+        System.out.println("\n SI UTILIZAS EL CONSTRUCTOR VACIO TE PETARA EL PROGRAMA");
+    }
+
+    public static String getDriver() {
+        return driver;
+    }
+
+    public String getURI() {
+        return URI;
+    }
+
+    public void setURI(String URI) {
+        this.URI = URI;
+    }
+
+    public String getIP() {
+        return IP;
+    }
+
+    public void setIP(String IP) {
+        this.IP = IP;
+    }
+
+    public String getPORT() {
+        return PORT;
+    }
+
+    public void setPORT(String PORT) {
+        this.PORT = PORT;
     }
 }
