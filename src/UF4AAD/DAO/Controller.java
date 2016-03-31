@@ -6,15 +6,10 @@ import javax.xml.xquery.XQException;
  */
 public class Controller
 {
-    private static final DAO1 dao1 = new DAO1();
     private static final String IP = "172.31.101.225";
     private static final String PORT = "8080";
-    private static final String URI = "xmldb:exist://"+IP+":"+ PORT +"/exist/xmlrpc";
-
     private static String adminUsername = "admin";
     private static String adminPassword = "dionis";
-
-    private static String mainCollection ="/db";
     private static String yourCollection = "uriDAO";
 
     private static String filePath = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/mondial.xml";
@@ -23,21 +18,23 @@ public class Controller
     //EL CODI DEL MAIN NO CAL TOCARLO I EL DEL DAO1 TAMPOC
     public static void main(String[] args)
     {
+        DAO1 dao1 = new DAO1(IP, PORT);
         try
         {
             //CLASE PARA CREAR COLLECCION
-            dao1.createCollection(URI+mainCollection, adminUsername, adminPassword, yourCollection);
+            dao1.createCollection(adminUsername, adminPassword, yourCollection);
 
             //CLASE PARA CREAR RECURSO
-            dao1.createResource(URI+mainCollection+"/"+yourCollection, adminUsername, adminPassword, filePath);
+            dao1.createResource("/"+yourCollection, adminUsername, adminPassword, filePath);
+
 
             //CLASE PARA CONSULTA XPATH
             System.out.println("\nCONSULTA XPATH");
-            System.out.println(dao1.query("collection('"+yourCollection+"')"+XPathQuery, PORT, IP));
+            System.out.println(dao1.query("collection('"+yourCollection+"')"+XPathQuery));
 
             //CLASE PARA CONSULTA XQUERY
             System.out.println("\nCONSULTA XQUERY");
-            System.out.println(dao1.query("for $p in fn:doc(\"uriDAO/mondial.xml\")//country[population=max(//mondial/country/population)] return $p/name ", PORT, IP));
+            System.out.println(dao1.query("for $p in fn:doc(\"uriDAO/mondial.xml\")/mondial/country/name return $p/name"));
         }
         catch (XQException e)            {System.out.println("XQException:            " + e);}
         catch (XMLDBException e)         {System.out.println("XMLDBException:         " + e);}

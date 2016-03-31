@@ -11,9 +11,22 @@ import java.io.File;
 public class DAO1
 {
     private static final String driver = "org.exist.xmldb.DatabaseImpl";
+    private String URI;
+    private String IP;
+    private String PORT;
     /**
      *
-     * @param URI
+     * @param IP
+     * @param PORT
+     */
+    public DAO1(String IP, String PORT)
+    {
+        this.IP = IP;
+        this.PORT = PORT;
+        URI =  "xmldb:exist://"+IP+":"+ PORT +"/exist/xmlrpc/db";
+    }
+    /**
+     *
      * @param adminUsername
      * @param adminPassword
      * @param collectionName
@@ -25,7 +38,7 @@ public class DAO1
      * @throws IllegalAccessException
      * @throws InstantiationException
      */
-    public void createCollection(String URI, String adminUsername, String adminPassword, String collectionName) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
+    public void createCollection(String adminUsername, String adminPassword, String collectionName) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
     {
         registerDatabase();
         Collection parent = DatabaseManager.getCollection(URI, adminUsername, adminPassword);
@@ -34,7 +47,6 @@ public class DAO1
     }
     /**
      *
-     * @param URI
      * @param adminUsername
      * @param adminPassword
      * @param filePath
@@ -46,28 +58,25 @@ public class DAO1
      * @throws IllegalAccessException
      * @throws InstantiationException
      */
-    public void createResource(String URI, String adminUsername, String adminPassword, String filePath) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
+    public void createResource(String yourCollection, String adminUsername, String adminPassword, String filePath) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
     {
         registerDatabase();
-        Collection collection = DatabaseManager.getCollection(URI, adminUsername, adminPassword);
+        Collection collection = DatabaseManager.getCollection(URI+yourCollection, adminUsername, adminPassword);
         File file = new File(filePath);
         Resource resource = collection.createResource(filePath, "XMLResource");
         resource.setContent(file);
         collection.storeResource(resource);
     }
-
     /**
      *
      * @param query String con la query
-     * @param PORT Puerto de ExistsDB
-     * @param IP IP del ordenador con ExistsDB
      * CONEXIÓN CON LA BBDD
      * QUERY A LA BBDD
      * ORDENA LAS LINEAS DEL RESULTADO DE LA QUERY
      * @return String de resultados
      * @throws XQException
      */
-    public String query(String query, String PORT, String IP) throws XQException
+    public String query(String query) throws XQException
     {
         XQDataSource source = new ExistXQDataSource();
         source.setProperty("serverName", IP);
