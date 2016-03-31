@@ -27,7 +27,7 @@ public class DAO1
      */
     public void createCollection(String URI, String adminUsername, String adminPassword, String collectionName) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
     {
-        openDatabase();
+        registerDatabase();
         Collection parent = DatabaseManager.getCollection(URI, adminUsername, adminPassword);
         CollectionManagementService c = (CollectionManagementService) parent.getService("CollectionManagementService", "1.0");
         c.createCollection(collectionName);
@@ -48,7 +48,7 @@ public class DAO1
      */
     public void createResource(String URI, String adminUsername, String adminPassword, String filePath) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
     {
-        openDatabase();
+        registerDatabase();
         Collection collection = DatabaseManager.getCollection(URI, adminUsername, adminPassword);
         File file = new File(filePath);
         Resource resource = collection.createResource(filePath, "XMLResource");
@@ -93,7 +93,8 @@ public class DAO1
      * @throws IllegalAccessException
      * @throws InstantiationException
      */
-    public void openDatabase() throws ClassNotFoundException, XMLDBException, IllegalAccessException, InstantiationException {
+    public void registerDatabase() throws ClassNotFoundException, XMLDBException, IllegalAccessException, InstantiationException
+    {
         Class clas = Class.forName(driver);
         Database database = (Database) clas.newInstance();
         database.setProperty("create-database", "true");

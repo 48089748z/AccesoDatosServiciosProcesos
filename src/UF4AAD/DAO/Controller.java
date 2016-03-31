@@ -17,7 +17,7 @@ public class Controller
     private static String mainCollection ="/db";
     private static String yourCollection = "uriDAO";
 
-    private static String filePath = "/home/48089748z/Escriptori/IdeaProjects/DadesIServeis/src/UF3AAD/ExamenUF3/mondial.xml";
+    private static String filePath = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/mondial.xml";
     private static String XPathQuery = "/mondial/country/name";
 
     //EL CODI DEL MAIN NO CAL TOCARLO I EL DEL DAO1 TAMPOC
@@ -39,10 +39,10 @@ public class Controller
             System.out.println("\nCONSULTA XQUERY");
             System.out.println(dao1.query("for $p in fn:doc(\"uriDAO/mondial.xml\")//country[population=max(//mondial/country/population)] return $p/name ", PORT, IP));
         }
-        catch (XMLDBException e)          {System.out.println("XMLDBException:         " + e);}
-        catch (ClassNotFoundException e)  {System.out.println("ClassNotFoundException: " + e);}
-        catch (IllegalAccessException e)  {System.out.println("IllegalAccessException: " + e);}
-        catch (InstantiationException e)  {System.out.println("InstantiationException: " + e);}
-        catch (XQException e)             {System.out.println("XQException:            " + e);}
+        catch (XQException e)            {System.out.println("XQException:            " + e);}
+        catch (XMLDBException e)         {System.out.println("XMLDBException:         " + e);}
+        catch (ClassNotFoundException e) {System.out.println("ClassNotFoundException: " + e);}
+        catch (IllegalAccessException e) {System.out.println("IllegalAccessException: " + e);}
+        catch (InstantiationException e) {System.out.println("InstantiationException: " + e);}
     }
 }
