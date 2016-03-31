@@ -1,4 +1,4 @@
-package UF4AAD;
+package UF4AAD.DAO;
 import net.xqj.exist.ExistXQDataSource;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
@@ -8,52 +8,73 @@ import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.CollectionManagementService;
 import javax.xml.xquery.*;
 import java.io.File;
-public class ExistsDAO
+public class DAO1
 {
     private static final String driver = "org.exist.xmldb.DatabaseImpl";
+    /**
+     *
+     * @param URI
+     * @param adminUsername
+     * @param adminPassword
+     * @param collectionName
+     * CONEXIÓN CON LA BBDD
+     * CREA UNA COLLECCIÓN NUEVA CON EL NOMBRE DADO
+     * AÑADE UN RECURSO NUEVO
+     * @throws XMLDBException
+     * @throws ClassNotFoundException
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
     public void createCollection(String URI, String adminUsername, String adminPassword, String collectionName) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
     {
-        //CONEXIÓN
-        Class clas = Class.forName(driver);
-        Database database = (Database) clas.newInstance();
-        database.setProperty("create-database", "true");
-        DatabaseManager.registerDatabase(database);
-
-        //CREAR COLECCIÓN NUEVA
+        openDatabase();
         Collection parent = DatabaseManager.getCollection(URI, adminUsername, adminPassword);
         CollectionManagementService c = (CollectionManagementService) parent.getService("CollectionManagementService", "1.0");
         c.createCollection(collectionName);
     }
+    /**
+     *
+     * @param URI
+     * @param adminUsername
+     * @param adminPassword
+     * @param filePath
+     * CONEXIÓN CON LA BBDD
+     * INSTACIA UNA COLLECCIÓN A LA QUE SE AÑADIRA EL RECURSO
+     * AÑADE UN RECURSO NUEVO
+     * @throws XMLDBException
+     * @throws ClassNotFoundException
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
     public void createResource(String URI, String adminUsername, String adminPassword, String filePath) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException
     {
-        //CONEXIÓN
-        Class clas = Class.forName(driver);
-        Database database = (Database) clas.newInstance();
-        database.setProperty("create-database", "true");
-        DatabaseManager.registerDatabase(database);
-
-        //INSTANCIAR COLECCIÓN A LA QUE AÑADIREMOS EL RECURSO
+        openDatabase();
         Collection collection = DatabaseManager.getCollection(URI, adminUsername, adminPassword);
-
-        //AÑADIR EL RECURSO
         File file = new File(filePath);
         Resource resource = collection.createResource(filePath, "XMLResource");
         resource.setContent(file);
         collection.storeResource(resource);
     }
+
+    /**
+     *
+     * @param query String con la query
+     * @param PORT Puerto de ExistsDB
+     * @param IP IP del ordenador con ExistsDB
+     * CONEXIÓN CON LA BBDD
+     * QUERY A LA BBDD
+     * ORDENA LAS LINEAS DEL RESULTADO DE LA QUERY
+     * @return String de resultados
+     * @throws XQException
+     */
     public String query(String query, String PORT, String IP) throws XQException
     {
-        //CONEXIÓN
         XQDataSource source = new ExistXQDataSource();
         source.setProperty("serverName", IP);
         source.setProperty("port", PORT);
         XQConnection connection = source.getConnection();
-
-        //QUERY
         XQPreparedExpression expression = connection.prepareExpression(query);
         XQResultSequence result = expression.executeQuery();
-
-        //ORDENAR LAS LINEAS DEL RESULTADO DE LA QUERY
         String resultados="";
         String linea;
         while (result.next())
@@ -63,5 +84,19 @@ public class ExistsDAO
         }
         connection.close();
         return resultados;
+    }
+
+    /**
+     * REGISTRA LA BASE DE DATOS EN EL DATABASEMANAGER
+     * @throws ClassNotFoundException
+     * @throws XMLDBException
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
+    public void openDatabase() throws ClassNotFoundException, XMLDBException, IllegalAccessException, InstantiationException {
+        Class clas = Class.forName(driver);
+        Database database = (Database) clas.newInstance();
+        database.setProperty("create-database", "true");
+        DatabaseManager.registerDatabase(database);
     }
 }

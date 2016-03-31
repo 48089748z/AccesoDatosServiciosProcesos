@@ -1,4 +1,4 @@
-package UF4AAD;
+package UF4AAD.DAO;
 import org.xmldb.api.base.XMLDBException;
 import javax.xml.xquery.XQException;
 /**
@@ -6,9 +6,7 @@ import javax.xml.xquery.XQException;
  */
 public class Controller
 {
-    private static final ExistsDAO existsDAO = new ExistsDAO();
-
-    //AMB AQUEST ExistsDAO NOMES CAL CAMBIAR LES PREFERENCIES PER QUE FUNCIONI AMB QUALSEVOL ALTRE USUARI I COLECCIÓ
+    private static final DAO1 dao1 = new DAO1();
     private static final String IP = "172.31.101.225";
     private static final String PORT = "8080";
     private static final String URI = "xmldb:exist://"+IP+":"+ PORT +"/exist/xmlrpc";
@@ -22,24 +20,24 @@ public class Controller
     private static String filePath = "/home/48089748z/Escriptori/IdeaProjects/DadesIServeis/src/UF3AAD/ExamenUF3/mondial.xml";
     private static String XPathQuery = "/mondial/country/name";
 
-    //EL CODI DEL MAIN NO CAL TOCARLO I EL DEL ExistsDAO TAMPOC
+    //EL CODI DEL MAIN NO CAL TOCARLO I EL DEL DAO1 TAMPOC
     public static void main(String[] args)
     {
         try
         {
             //CLASE PARA CREAR COLLECCION
-            existsDAO.createCollection(URI+mainCollection, adminUsername, adminPassword, yourCollection);
+            dao1.createCollection(URI+mainCollection, adminUsername, adminPassword, yourCollection);
 
             //CLASE PARA CREAR RECURSO
-            existsDAO.createResource(URI+mainCollection+"/"+yourCollection, adminUsername, adminPassword, filePath);
+            dao1.createResource(URI+mainCollection+"/"+yourCollection, adminUsername, adminPassword, filePath);
 
             //CLASE PARA CONSULTA XPATH
             System.out.println("\nCONSULTA XPATH");
-            System.out.println(existsDAO.query("collection('"+yourCollection+"')"+XPathQuery, PORT, IP));
+            System.out.println(dao1.query("collection('"+yourCollection+"')"+XPathQuery, PORT, IP));
 
             //CLASE PARA CONSULTA XQUERY
             System.out.println("\nCONSULTA XQUERY");
-            System.out.println(existsDAO.query("for $p in fn:doc(\"uriDAO/mondial.xml\")//country[population=max(//mondial/country/population)] return $p/name ", PORT, IP));
+            System.out.println(dao1.query("for $p in fn:doc(\"uriDAO/mondial.xml\")//country[population=max(//mondial/country/population)] return $p/name ", PORT, IP));
         }
         catch (XMLDBException e)          {System.out.println("XMLDBException:         " + e);}
         catch (ClassNotFoundException e)  {System.out.println("ClassNotFoundException: " + e);}
