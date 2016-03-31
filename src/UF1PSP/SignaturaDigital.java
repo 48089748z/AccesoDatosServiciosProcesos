@@ -12,7 +12,6 @@ public class SignaturaDigital
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, ClassNotFoundException
     {
         File f = new File(FITXER_PLA);
-
         if(!Utils.areKeysPresent())
         {
             publicKey = Utils.generatePublicKey();
@@ -29,7 +28,6 @@ public class SignaturaDigital
         byte[] encryptDigestionat = Utils.sign(digestionat,privateKey);
         System.out.println("Longitud del fitxer: "+f.length());
         System.out.println("Longitud de la firma: "+encryptDigestionat.length);
-        Utils.write(FITXER_SIGNAT,Utils.concatenateByteArrays(Utils.read(f),encryptDigestionat));
+        //Utils.write(FITXER_SIGNAT,Utils.concatenateByteArrays(Utils.read(f),encryptDigestionat));
     }
-
 }
