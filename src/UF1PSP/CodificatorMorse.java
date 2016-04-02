@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by 48089748z on 30/03/16.
  */
-public class EncriptadorMorse
+public class CodificatorMorse
 {
 
     //DIONIS                                                        YO

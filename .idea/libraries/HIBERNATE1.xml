@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="HIBERNATE1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/LIBRERIAS/BaseX84.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/LIBRERIAS/DB40.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/LIBRERIAS/JAVAMAIL.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/LIBRERIAS/JSON-SIMPLE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/LIBRERIAS/POSTGRESQL-JDBC.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/LIBRERIAS/SQLITE-JDBC.jar!/" />
+      <root url="file://$USER_HOME$/Desktop/LIBRERIAS/HIBERNATE" />
+      <root url="file://$USER_HOME$/Desktop/LIBRERIAS/XMLDB" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/LIBRERIAS/SQLITE-JDBC.jar!/" />
+      <root url="file://$PROJECT_DIR$/src" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/LIBRERIAS/HIBERNATE" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Desktop/LIBRERIAS/XMLDB" recursive="false" />
+  </library>
+</component>
