@@ -4,37 +4,34 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import java.io.*;
 import java.security.*;
-import java.util.Arrays;
-
 public class SignaturaDigital
 {
-    public static final String PRIVATE_KEY_FILE = "private.key";
-    public static final String FITXER_PLA = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF1PSP/Original_file.txt";
-    public static final String FITXER_SIGNAT = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF1PSP/Signed_file.txt";
+    public static final String ORIGINAL_FILE = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF1PSP/Original_file.txt";
+    public static final String STAMPED_FILE = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF1PSP/Signed_file.txt";
     private static KeyPair keyPair = null;
     private static PublicKey publicKey = null;
     private static PrivateKey privateKey = null;
-
-
-    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, ClassNotFoundException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchPaddingException {
-        File f = new File(FITXER_PLA);
+    private static  File file = new File(ORIGINAL_FILE);
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, ClassNotFoundException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchPaddingException
+    {
+        //NO GUARDO LES CLAUS A UN FITXER
         if(!Utils.areKeysPresent())
         {
-            keyPair = Utils.generatePublicKey();
+            keyPair = Utils.generateKeys();
             publicKey = keyPair.getPublic();
             privateKey = keyPair.getPrivate();
         }
-        else
+        byte[] fileHash = Utils.getHash(file,"MD5");
+        byte[] encrypted = Utils.encrypt(fileHash, privateKey);
+        Utils.write(STAMPED_FILE, Utils.concatenateByteArrays(Utils.read(file), encrypted));
+        byte[] decryptedHash = Utils.decrypt(encrypted, publicKey);
+        String hash1 = new String(fileHash,"UTF-8");
+        String hash2 = new String (decryptedHash, "UTF-8");
+        System.out.println("\nHASH ORIGINAL FILE: "+hash1+"\nORIGINAL FILE LENGTH: "+file.length()+"\nSTAMPED FILE LENGTH: "+encrypted.length+"\nDECRYPTED HASH: "+hash2);
+        if (hash1.equals(hash2))
         {
-            ObjectInputStream inputStream = null;
-            inputStream = new ObjectInputStream(new FileInputStream(PRIVATE_KEY_FILE));
-            privateKey = (PrivateKey) inputStream.readObject();
+            System.out.println("\n ES EL ARCHIVO ORIGINAL!");
         }
 
-        byte[] digestionat = Utils.digestiona(f,"MD5");
-        byte[] encryptDigestionat = Utils.encrypt(digestionat, privateKey);
-        System.out.println("FILE LENGTH: "+f.length());
-        System.out.println("STAMP LENGTH: "+encryptDigestionat.length);
-        Utils.write(FITXER_SIGNAT, Utils.concatenateByteArrays(Utils.read(f), encryptDigestionat));
     }
 }

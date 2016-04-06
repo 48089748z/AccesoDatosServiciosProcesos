@@ -10,7 +10,7 @@ import java.security.*;
 public class Utils
 {
     private static KeyPairGenerator generator = null;
-    public static byte[] digestiona(File file, String type) throws NoSuchAlgorithmException, IOException
+    public static byte[] getHash(File file, String type) throws NoSuchAlgorithmException, IOException
     {
         MessageDigest messageDigest = MessageDigest.getInstance(type);
         messageDigest.update(Files.readAllBytes(Paths.get(file.getAbsolutePath())));
@@ -21,7 +21,7 @@ public class Utils
         if (generator==null){return false;}
         else {return true;}
     }
-    public static KeyPair generatePublicKey() throws NoSuchAlgorithmException
+    public static KeyPair generateKeys() throws NoSuchAlgorithmException
     {
         generator = KeyPairGenerator.getInstance("RSA");
         return generator.generateKeyPair();
@@ -34,6 +34,7 @@ public class Utils
         cipher.init(Cipher.ENCRYPT_MODE, privateKey);
         return cipher.doFinal(digestionat);
     }
+
     public static byte[] decrypt(byte[] encrypted, PublicKey publicKey) throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException {
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.DECRYPT_MODE, publicKey);
