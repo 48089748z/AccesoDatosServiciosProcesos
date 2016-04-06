@@ -28,11 +28,16 @@ public class Utils
     }
     public static byte[] read(File file) throws IOException {return Files.readAllBytes(Paths.get(file.getAbsolutePath()));}
 
-    public static byte[] sign(byte[] digestionat, PrivateKey privateKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+    public static byte[] encrypt(byte[] digestionat, PrivateKey privateKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
 
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.ENCRYPT_MODE, privateKey);
         return cipher.doFinal(digestionat);
+    }
+    public static byte[] decrypt(byte[] encrypted, PublicKey publicKey) throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException {
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.DECRYPT_MODE, publicKey);
+        return cipher.doFinal(encrypted);
     }
     public static void write(String FILE_TO_SIGN, byte[] arrayConcatenat) throws IOException
     {
@@ -46,4 +51,5 @@ public class Utils
         outputStream.write( array2 );
         return outputStream.toByteArray();
     }
+
 }
