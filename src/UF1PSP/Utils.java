@@ -1,52 +1,50 @@
 package UF1PSP;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import java.io.*;
-import java.math.BigInteger;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.*;
 public class Utils
 {
-
+    private static KeyPairGenerator generator = null;
     public static byte[] digestiona(File file, String type) throws NoSuchAlgorithmException, IOException
     {
-        MessageDigest md = MessageDigest.getInstance(type);
-       return null;
+        MessageDigest messageDigest = MessageDigest.getInstance(type);
+        messageDigest.update(Files.readAllBytes(Paths.get(file.getAbsolutePath())));
+        return messageDigest.digest();
     }
     public static boolean areKeysPresent()
     {
-        return true;
+        if (generator==null){return false;}
+        else {return true;}
     }
-    public static KeyPair generatePublicKey()
+    public static KeyPair generatePublicKey() throws NoSuchAlgorithmException
     {
-        return null;//new KeyPair();
+        generator = KeyPairGenerator.getInstance("RSA");
+        return generator.generateKeyPair();
     }
-    public static boolean read(File file)
+    public static byte[] read(File file) throws IOException {return Files.readAllBytes(Paths.get(file.getAbsolutePath()));}
+
+    public static byte[] sign(byte[] digestionat, PrivateKey privateKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.ENCRYPT_MODE, privateKey);
+        return cipher.doFinal(digestionat);
+    }
+
+    public static void write()
     {
-        return true;
+
     }
-    public static byte[] sign(byte[] digestionat, PrivateKey privateKey)
+
+
+
+
+    public static void concatenateByteArrays()
     {
-        return null;
+
     }
-    public static boolean write()
-    {
-        return true;
-    }
-    public static String digestiona(String path) throws NoSuchAlgorithmException, FileNotFoundException, IOException
-    {
-        MessageDigest digest = MessageDigest.getInstance("MD5");
-        File f = new File(path);
-        InputStream is = new FileInputStream(f);
-        byte[] buffer = new byte[(int) f.length()];
-        int read = 0;
-        while ((read = is.read(buffer)) > 0)
-        {
-            digest.update(buffer, 0, read);
-        }
-        byte[] md5sum = digest.digest();
-        BigInteger bigInt = new BigInteger(1, md5sum);
-        String output = bigInt.toString(16);
-        is.close();
-        return output;
-    }
-    public static boolean Comparar(String file, String hashCode) throws NoSuchAlgorithmException, IOException {return hashCode.equals(digestiona(file));}
-    public static boolean comparar(String file1, String file2) throws NoSuchAlgorithmException, IOException{return digestiona(file1).equals(digestiona(file2));}
 }
