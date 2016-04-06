@@ -34,17 +34,16 @@ public class Utils
         cipher.init(Cipher.ENCRYPT_MODE, privateKey);
         return cipher.doFinal(digestionat);
     }
-
-    public static void write()
+    public static void write(String FILE_TO_SIGN, byte[] arrayConcatenat) throws IOException
     {
-
+        FileOutputStream fos = new FileOutputStream(FILE_TO_SIGN);
+        fos.write(arrayConcatenat);
+        fos.close();
     }
-
-
-
-
-    public static void concatenateByteArrays()
-    {
-
+    public static byte[] concatenateByteArrays(byte[] array1, byte[] array2) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream( );
+        outputStream.write( array1 );
+        outputStream.write( array2 );
+        return outputStream.toByteArray();
     }
 }
