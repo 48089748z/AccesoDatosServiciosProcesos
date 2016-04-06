@@ -1,4 +1,4 @@
-package UF1PSP;
+package UF1PSP.DigitalStamp;
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;

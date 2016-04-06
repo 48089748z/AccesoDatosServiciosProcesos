@@ -1,4 +1,4 @@
-package UF1PSP;
+package UF1PSP.Codificators;
 
 import java.util.Scanner;
 
