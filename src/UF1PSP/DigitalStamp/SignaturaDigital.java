@@ -46,5 +46,6 @@ public class SignaturaDigital
         privateFos.write(privateK);
         publicFos.close();
         privateFos.close();
+        System.out.println("\n LLAVES GUARDADAS EN ARCHIVOS.txt");
     }
 }
