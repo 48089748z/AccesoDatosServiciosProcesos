@@ -1,4 +1,4 @@
-package UF4AAD.DAOsobreDAO;
+package UF4AAD.DAOsobre;
 import net.xqj.exist.ExistXQDataSource;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;

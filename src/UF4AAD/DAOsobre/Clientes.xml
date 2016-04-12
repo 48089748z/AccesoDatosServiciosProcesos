@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clientes>
+    <cliente>
+        <nif>48089748z</nif>
+        <nombre>oriol</nombre>
+        <apellido>cuñado</apellido>
+    </cliente>
+    <cliente>
+        <nif></nif>
+        <nombre></nombre>
+        <apellido></apellido>
+    </cliente>
+</clientes>

@@ -1,1 +1,31 @@
 Tue Apr 12 16:26:13 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 16:35:58 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 16:35:58 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobreDAO/Empleados.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 16:35:58 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobreDAO/Clientes.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 16:35:58 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobreDAO/Catalogo.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 16:35:58 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobreDAO/Facturas.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:07:08 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 17:07:08 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Empleados.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:07:08 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Clientes.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:07:08 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Catalogo.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:07:08 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Facturas.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:08:02 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 17:08:02 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Empleados.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:08:02 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Clientes.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:08:02 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Catalogo.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:08:02 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Facturas.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:09:55 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 17:09:55 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Empleados.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:09:55 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Clientes.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:09:55 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Catalogo.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:09:55 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Facturas.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:11:47 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 17:11:47 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Empleados.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:11:48 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Clientes.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:11:48 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Catalogo.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:11:48 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Facturas.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:15:14 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 17:15:14 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Empleados.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:15:14 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Clientes.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:15:14 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Catalogo.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:15:14 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Facturas.xml a la colecion: uriDAOsobreDAO
