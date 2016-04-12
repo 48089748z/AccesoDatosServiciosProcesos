@@ -10,46 +10,46 @@ import java.util.List;
 public class Database
 {
     @XmlElement(name = "clientes", required = true)
-    protected List<Cliente> clientes;
+    protected List<Cliente> arrayClientes;
 
     @XmlElement(name = "empleados", required = true)
-    protected List<Empleado> empleados;
+    protected List<Empleado> arrayEmpleados;
 
     @XmlElement(name = "facturas", required = true)
-    protected List<Factura> facturas;
+    protected List<Factura> arrayFacturas;
 
     @XmlElement(name = "catalogo", required = true)
-    protected List<Producto> productos;
+    protected List<Producto> arrayProductos;
 
-    public List<Cliente> getClientes() {
-        return clientes;
+    public List<Cliente> getArrayClientes() {
+        return arrayClientes;
     }
 
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
+    public void setArrayClientes(List<Cliente> arrayClientes) {
+        this.arrayClientes = arrayClientes;
     }
 
-    public List<Empleado> getEmpleados() {
-        return empleados;
+    public List<Empleado> getArrayEmpleados() {
+        return arrayEmpleados;
     }
 
-    public void setEmpleados(List<Empleado> empleados) {
-        this.empleados = empleados;
+    public void setArrayEmpleados(List<Empleado> arrayEmpleados) {
+        this.arrayEmpleados = arrayEmpleados;
     }
 
-    public List<Factura> getFacturas() {
-        return facturas;
+    public List<Factura> getArrayFacturas() {
+        return arrayFacturas;
     }
 
-    public void setFacturas(List<Factura> facturas) {
-        this.facturas = facturas;
+    public void setArrayFacturas(List<Factura> arrayFacturas) {
+        this.arrayFacturas = arrayFacturas;
     }
 
-    public List<Producto> getProductos() {
-        return productos;
+    public List<Producto> getArrayProductos() {
+        return arrayProductos;
     }
 
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
+    public void setArrayProductos(List<Producto> arrayProductos) {
+        this.arrayProductos = arrayProductos;
     }
 }

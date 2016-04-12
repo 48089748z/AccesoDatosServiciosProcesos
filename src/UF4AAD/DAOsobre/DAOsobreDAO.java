@@ -41,7 +41,9 @@ public class DAOsobreDAO {
     public void añadirEmpleado(String id, String nombre, String apellido, String sueldo, String años_trabajados) {
     }
 
-    public void borrarCliente(String nif_cliente) {
+    public void borrarCliente(String nif_cliente)
+    {
+
     }
 
     public void borrarEmpleado(String id_empleado) {
@@ -54,6 +56,24 @@ public class DAOsobreDAO {
     public void añadirCliente()
     {
 
+    }
+    public void showAll()
+    {
+        try
+        {
+            JAXBContext context = JAXBContext.newInstance(Database.class);
+            Unmarshaller UMS = context.createUnmarshaller();
+            Database RST = (Database) UMS.unmarshal(databaseFile);
+
+            for (int x=0; x<RST.getClientes().size(); x++)
+            {
+                System.out.println(RST.getClientes().get(x).getNombre());
+            }
+        }
+        catch (JAXBException e)
+        {
+            e.printStackTrace();
+        }
     }
 
 }
