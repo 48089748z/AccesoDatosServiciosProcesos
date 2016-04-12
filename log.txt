@@ -61,3 +61,9 @@ Tue Apr 12 19:12:15 CEST 2016 coleccion : uriDAOsobreDAO creada
 Tue Apr 12 19:12:15 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml a la colecion: uriDAOsobreDAO
 Tue Apr 12 19:20:32 CEST 2016 coleccion : uriDAOsobreDAO creada
 Tue Apr 12 19:20:32 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 19:22:46 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 19:22:46 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 19:22:53 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 19:22:53 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 19:42:34 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 19:42:34 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml a la colecion: uriDAOsobreDAO

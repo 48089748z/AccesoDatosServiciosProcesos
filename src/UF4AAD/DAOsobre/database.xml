@@ -1,60 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <database>
 
-    <clientes>
-        <cliente>
+    <clients>
+        <client>
             <nif>48089748z</nif>
-            <nombre>oriol</nombre>
-            <apellido>cuñado</apellido>
-        </cliente>
-        <cliente>
-            <nif></nif>
-            <nombre></nombre>
-            <apellido></apellido>
-        </cliente>
-    </clientes>
+            <name>oriol</name>
+            <surname>cuñado</surname>
+        </client>
 
-    <empleados>
-        <empleado>
+        <client>
+            <nif>48089748z</nif>
+            <name>oriol</name>
+            <surname>cuñado</surname>
+        </client>
+    </clients>
+
+    <employees>
+        <employee>
             <id></id>
-            <nombre></nombre>
-            <apellido></apellido>
-            <sueldo></sueldo>
-            <años_trabajados></años_trabajados>
-        </empleado>
-    </empleados>
-
-    <facturas>
-        <factura>
-            <nif_cliente>48089748z</nif_cliente>
-            <id_producto>0</id_producto>
-            <precio_unidad>3€</precio_unidad>
-            <precio_total>30€</precio_total>
-            <iva>21%</iva>
-        </factura>
-        <factura>
-            <nif_cliente>48089748z</nif_cliente>
-            <id_producto>1</id_producto>
-            <precio_unidad>3€</precio_unidad>
-            <precio_total>30€</precio_total>
-            <iva>21%</iva>
-        </factura>
-        <factura>
-            <nif_cliente>47091749l</nif_cliente>
-            <id_producto>2</id_producto>
-            <precio_unidad>3€</precio_unidad>
-            <precio_total>30€</precio_total>
-            <iva>21%</iva>
-        </factura>
-    </facturas>
-
-    <catalogo>
-        <producto>
+            <name></name>
+            <surname></surname>
+            <salary></salary>
+            <years_worked></years_worked>
+        </employee>
+        <employee>
             <id></id>
-            <nombre></nombre>
-            <precio></precio>
+            <name></name>
+            <surname></surname>
+            <salary></salary>
+            <years_worked></years_worked>
+        </employee>
+    </employees>
+
+    <bills>
+        <bill>
+            <nif_client>48089748z</nif_client>
+            <id_product>0</id_product>
+            <price_each>3€</price_each>
+            <price_total>30€</price_total>
+            <iva>21%</iva>
+        </bill>
+        <bill>
+            <nif_client>48089748z</nif_client>
+            <id_product>0</id_product>
+            <price_each>3€</price_each>
+            <price_total>30€</price_total>
+            <iva>21%</iva>
+        </bill>
+    </bills>
+
+    <catalog>
+        <product>
+            <id></id>
+            <name></name>
+            <price></price>
             <stock></stock>
-        </producto>
-    </catalogo>
+        </product>
+        <product>
+            <id></id>
+            <name></name>
+            <price></price>
+            <stock></stock>
+        </product>
+    </catalog>
 
 </database>

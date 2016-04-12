@@ -26,7 +26,6 @@ public class DAOsobreDAO {
     public static void openDatabase() throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException, XQException {
         dao1 = new DAOOscar(IP, PORT, adminUsername, adminPassword, URI, DRIVER);
         dao1.anadorColeccion(myCollection);
-
         dao1.anadirColecionArchivo(databasePath, myCollection);
     }
 
@@ -51,21 +50,22 @@ public class DAOsobreDAO {
     }
     public void showAll()
     {
-       try
+      /* try
         {
             JAXBContext context = JAXBContext.newInstance(DatabaseType.class);
             Unmarshaller UMS = context.createUnmarshaller();
             DatabaseType RST = (DatabaseType) UMS.unmarshal(databaseFile);
 
-            for (int x=0; x<RST.getClientes().getCliente().size(); x++)
+
+            for (int x=0; x<RST.getClients().getClient().get(x).size(); x++)
             {
-                System.out.println(RST.getClientes().getCliente().get(x).getNombre());
+                System.out.println(RST.getClients().getClient().get(x).getName());
             }
         }
         catch (JAXBException e)
         {
             e.printStackTrace();
-        }
+        }*/
     }
 
 }
