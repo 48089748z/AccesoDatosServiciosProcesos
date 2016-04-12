@@ -25,10 +25,8 @@ public class DAOsobreDAO {
     private static String adminPassword = "dionis";
     private static String myCollection = "uriDAOsobreDAO";
     private static String URI = "xmldb:exist://" + IP + ":" + PORT + "/exist/xmlrpc";
-    private static String empleados = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Empleados.xml";
-    private static String clientes = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Clientes.xml";
-    private static String catalogo = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Catalogo.xml";
-    private static String facturas = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Facturas.xml";
+    private static String databasePath = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml";
+    private static File databaseFile = new File(databasePath);
 
     public DAOsobreDAO() {
     }
@@ -36,10 +34,8 @@ public class DAOsobreDAO {
     public static void openDatabase() throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException, XQException {
         dao1 = new DAOOscar(IP, PORT, adminUsername, adminPassword, URI, DRIVER);
         dao1.anadorColeccion(myCollection);
-        dao1.anadirColecionArchivo(empleados, myCollection);
-        dao1.anadirColecionArchivo(clientes, myCollection);
-        dao1.anadirColecionArchivo(catalogo, myCollection);
-        dao1.anadirColecionArchivo(facturas, myCollection);
+
+        dao1.anadirColecionArchivo(databasePath, myCollection);
     }
 
     public void añadirEmpleado(String id, String nombre, String apellido, String sueldo, String años_trabajados) {
@@ -57,30 +53,7 @@ public class DAOsobreDAO {
 
     public void añadirCliente()
     {
-        try
-        {
-            Scanner in = new Scanner(System.in);
-            File fileClientes = new File(clientes);
-            System.out.println("Escribe el NIF del Cliente");
-            String nif = in.nextLine();
 
-            System.out.println("Escribe el NOMBRE del Cliente");
-            String name = in.nextLine();
-
-            System.out.println("Escribe el APELLIDO del Cliente");
-            String surname = in.nextLine();
-
-            Cliente clientToAdd = new Cliente(nif, name, surname);
-            JAXBContext context = JAXBContext.newInstance(Pokedex.class);
-            Unmarshaller UMS = context.createUnmarshaller();
-            Clientes RST = (Clientes) UMS.unmarshal(fileClientes);
-            RST.getClientes().add(clientToAdd);
-
-            Marshaller MS = context.createMarshaller();
-            MS.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            MS.marshal(RST, fileClientes);
-        }
-        catch (JAXBException e) {e.printStackTrace();}
     }
 
 }

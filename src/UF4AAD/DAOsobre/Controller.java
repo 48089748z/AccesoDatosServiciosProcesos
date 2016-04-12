@@ -12,9 +12,9 @@ public class Controller
     public static void main(String[] args) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException, XQException
     {
         dao2 = new DAOsobreDAO();
-        menu();
+       // menu();
         dao2.openDatabase();
-        dao2.añadirCliente();
+
 
 
     }

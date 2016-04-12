@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database>
+
+    <clientes>
+        <cliente>
+            <nif>48089748z</nif>
+            <nombre>oriol</nombre>
+            <apellido>cuñado</apellido>
+        </cliente>
+        <cliente>
+            <nif></nif>
+            <nombre></nombre>
+            <apellido></apellido>
+        </cliente>
+    </clientes>
+
+    <empleados>
+        <empleado>
+            <id></id>
+            <nombre></nombre>
+            <apellido></apellido>
+            <sueldo></sueldo>
+            <años_trabajados></años_trabajados>
+        </empleado>
+    </empleados>
+
+    <facturas>
+        <factura>
+            <nif_cliente>48089748z</nif_cliente>
+            <id_producto>0</id_producto>
+            <precio_unidad>3€</precio_unidad>
+            <precio_total>30€</precio_total>
+            <iva>21%</iva>
+        </factura>
+        <factura>
+            <nif_cliente>48089748z</nif_cliente>
+            <id_producto>1</id_producto>
+            <precio_unidad>3€</precio_unidad>
+            <precio_total>30€</precio_total>
+            <iva>21%</iva>
+        </factura>
+        <factura>
+            <nif_cliente>47091749l</nif_cliente>
+            <id_producto>2</id_producto>
+            <precio_unidad>3€</precio_unidad>
+            <precio_total>30€</precio_total>
+            <iva>21%</iva>
+        </factura>
+    </facturas>
+
+    <catalogo>
+        <producto>
+            <id></id>
+            <nombre></nombre>
+            <precio></precio>
+            <stock></stock>
+        </producto>
+    </catalogo>
+
+</database>
