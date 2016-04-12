@@ -1,17 +1,10 @@
 package UF4AAD.DAOsobre;
-import UF1AAD.PokemonsJAXB.Nombre;
-import UF1AAD.PokemonsJAXB.Pokedex;
-import UF1AAD.PokemonsJAXB.Pokemon;
 import org.xmldb.api.base.XMLDBException;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.xquery.XQException;
 import java.io.File;
-import java.math.BigInteger;
-import java.util.Scanner;
 
 /**
  * Created by 48089748z on 12/04/16.
@@ -65,9 +58,9 @@ public class DAOsobreDAO {
             Unmarshaller UMS = context.createUnmarshaller();
             Database RST = (Database) UMS.unmarshal(databaseFile);
 
-            for (int x=0; x<RST.getClientes().size(); x++)
+            for (int x=0; x<RST.getArrayClientes().size(); x++)
             {
-                System.out.println(RST.getClientes().get(x).getNombre());
+                System.out.println(RST.getArrayClientes().get(x).getNombre());
             }
         }
         catch (JAXBException e)

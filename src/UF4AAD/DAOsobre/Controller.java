@@ -25,7 +25,7 @@ public class Controller
         boolean stop = false;
         while (stop==false)
         {
-            System.out.println("\n (0)Mostrar Todo\n (1) Añadir Empleado\n(2) Añadir Cliente\n(3) Borrar Empleado \n(4) Borrar Cliente \n (5)Facturas Cliente X");
+            System.out.println("\n (0) Mostrar Todo\n (1) Añadir Empleado\n (2) Añadir Cliente\n (3) Borrar Empleado \n (4) Borrar Cliente \n (5) Facturas Cliente X");
             String option = in.nextLine();
             switch (option)
             {

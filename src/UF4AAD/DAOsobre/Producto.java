@@ -10,13 +10,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Producto
 {
     @XmlElement(name = "id", required = true)
-    protected String id;
+    String id;
     @XmlElement(name = "nombre", required = true)
-    protected String nombre;
+    String nombre;
     @XmlElement(name = "precio", required = true)
-    protected String precio;
+    String precio;
     @XmlElement(name = "stock", required = true)
-    protected String stock;
+    String stock;
 
     public String getId() {
         return id;

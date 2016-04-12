@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "factura")
 public class Factura {
     @XmlElement(name = "nif_cliente", required = true)
-    protected String nif_cliente;
+    String nif_cliente;
     @XmlElement(name = "id_producto", required = true)
-    protected String id_producto;
+    String id_producto;
     @XmlElement(name = "precio_unidad", required = true)
-    protected String precio_unidad;
+    String precio_unidad;
     @XmlElement(name = "precio_total", required = true)
-    protected String precio_total;
+    String precio_total;
     @XmlElement(name = "iva", required = true)
-    protected String iva;
+    String iva;
 
     public String getNif_cliente() {
         return nif_cliente;
