@@ -8,10 +8,7 @@
 
 package UF4AAD.DAOsobre;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -43,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
     "price",
     "stock"
 })
+@XmlRootElement(name = "product")
 public class ProductType {
 
     @XmlElement(required = true)

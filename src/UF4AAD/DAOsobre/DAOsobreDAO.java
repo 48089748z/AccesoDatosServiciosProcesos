@@ -50,14 +50,13 @@ public class DAOsobreDAO {
     }
     public void showAll()
     {
-      /* try
+       try
         {
             JAXBContext context = JAXBContext.newInstance(DatabaseType.class);
             Unmarshaller UMS = context.createUnmarshaller();
             DatabaseType RST = (DatabaseType) UMS.unmarshal(databaseFile);
 
-
-            for (int x=0; x<RST.getClients().getClient().get(x).size(); x++)
+            for (int x=0; x<RST.getClients().getClient().size(); x++)
             {
                 System.out.println(RST.getClients().getClient().get(x).getName());
             }
@@ -65,7 +64,7 @@ public class DAOsobreDAO {
         catch (JAXBException e)
         {
             e.printStackTrace();
-        }*/
+        }
     }
 
 }
