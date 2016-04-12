@@ -1,5 +1,7 @@
 package UF4AAD.DAOsobre;
 import org.xmldb.api.base.XMLDBException;
+
+import javax.xml.bind.JAXBException;
 import javax.xml.xquery.XQException;
 import java.util.Scanner;
 
@@ -10,8 +12,7 @@ import java.util.Scanner;
 public class Controller
 {
     private static DAOsobreDAO dao2;
-    public static void main(String[] args) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException, XQException
-    {
+    public static void main(String[] args) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException, XQException, JAXBException {
         start();
         menu();
 
@@ -19,8 +20,7 @@ public class Controller
 
 
     }
-    public static void menu()
-    {
+    public static void menu() throws JAXBException {
         Scanner in = new Scanner(System.in);
         boolean stop = false;
         while (stop==false)

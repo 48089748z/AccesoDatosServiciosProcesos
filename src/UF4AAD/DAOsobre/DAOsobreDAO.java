@@ -48,23 +48,29 @@ public class DAOsobreDAO {
     {
 
     }
-    public void showAll()
+    public void showAll() throws JAXBException
     {
-       try
+        JAXBContext context = JAXBContext.newInstance(DatabaseType.class);
+        Unmarshaller UMS = context.createUnmarshaller();
+        DatabaseType RST = (DatabaseType) UMS.unmarshal(databaseFile);
+        System.out.println("\n\n\nCLIENTS");
+        for (int x=0; x<RST.getClients().getClient().size(); x++)
         {
-            JAXBContext context = JAXBContext.newInstance(DatabaseType.class);
-            Unmarshaller UMS = context.createUnmarshaller();
-            DatabaseType RST = (DatabaseType) UMS.unmarshal(databaseFile);
+            System.out.println("   \nNIF: "+RST.getClients().getClient().get(x).getNif()+
+                    "   \nNAME: "+RST.getClients().getClient().get(x).getName()+
+                    "   \nSURNAME: "+RST.getClients().getClient().get(x).getSurname());
+        }
 
-            for (int x=0; x<RST.getClients().getClient().size(); x++)
-            {
-                System.out.println(RST.getClients().getClient().get(x).getName());
-            }
-        }
-        catch (JAXBException e)
+        System.out.println("\n\n\nEMPLOYEES");
+        for (int x=0; x<RST.getEmployees().getEmployee().size(); x++)
         {
-            e.printStackTrace();
+            System.out.println("   \nID: "+RST.getEmployees().getEmployee().get(x).getId()+
+                    "   \nNAME: "+RST.getEmployees().getEmployee().get(x).getName()+
+                    "   \nSURNAME: "+RST.getEmployees().getEmployee().get(x).getSurname()+
+                    "   \nSALARY: "+RST.getEmployees().getEmployee().get(x).getSalary()+
+                    "   \nID: "+RST.getEmployees().getEmployee().get(x).getId());
         }
+
     }
 
 }
