@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <database>
-
     <clients>
         <client>
             <nif>48089748z</nif>
-            <name>oriol</name>
-            <surname>cuñado</surname>
+            <name>uRi</name>
+            <surname>Cuñado</surname>
         </client>
-
         <client>
-            <nif>48089748z</nif>
-            <name>oriol</name>
-            <surname>cuñado</surname>
+            <nif>XXXXXXX</nif>
+            <name>Dionis</name>
+            <surname>Remon</surname>
+        </client>
+        <client>
+            <nif>12345A</nif>
+            <name>Alejandro</name>
+            <surname>Soriano</surname>
         </client>
     </clients>
-
     <employees>
         <employee>
-            <id></id>
-            <name></name>
-            <surname></surname>
-            <salary></salary>
-            <years_worked></years_worked>
+            <id>48089748z</id>
+            <name>uRi</name>
+            <surname>Cuñado</surname>
+            <salary>3200€</salary>
+            <years_worked>3</years_worked>
         </employee>
         <employee>
-            <id></id>
-            <name></name>
-            <surname></surname>
-            <salary></salary>
-            <years_worked></years_worked>
+            <id>XXXXXXX</id>
+            <name>Dionis</name>
+            <surname>Remon</surname>
+            <salary>8302€</salary>
+            <years_worked>15</years_worked>
         </employee>
     </employees>
-
     <bills>
         <bill>
             <nif_client>48089748z</nif_client>
@@ -41,27 +42,32 @@
             <iva>21%</iva>
         </bill>
         <bill>
-            <nif_client>48089748z</nif_client>
-            <id_product>0</id_product>
-            <price_each>3€</price_each>
-            <price_total>30€</price_total>
-            <iva>21%</iva>
+            <nif_client>XXXXXXX</nif_client>
+            <id_product>1</id_product>
+            <price_each>10€</price_each>
+            <price_total>300€</price_total>
+            <iva>10%</iva>
+        </bill>
+        <bill>
+            <nif_client>111</nif_client>
+            <id_product>111</id_product>
+            <price_each>111</price_each>
+            <price_total>111</price_total>
+            <iva>11</iva>
         </bill>
     </bills>
-
     <catalog>
         <product>
-            <id></id>
-            <name></name>
-            <price></price>
-            <stock></stock>
+            <id>3</id>
+            <name>iPhone6S</name>
+            <price>700€</price>
+            <stock>230.000</stock>
         </product>
         <product>
-            <id></id>
-            <name></name>
-            <price></price>
-            <stock></stock>
+            <id>4</id>
+            <name>Samsung Galaxy S7 Edge</name>
+            <price>900€</price>
+            <stock>120.000</stock>
         </product>
     </catalog>
-
 </database>

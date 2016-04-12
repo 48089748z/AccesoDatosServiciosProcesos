@@ -14,28 +14,27 @@ import java.io.IOException;
 import java.util.Date;
 /**
  * Created by oscarXIII on 07/04/2016.
+ *
+ * NOTA 9.5/10
+ *
+ * METODOS STATICS QUE NO HAN DE SERLO                   -0.25
+ * METODOS log() e iniciarDriver() pueden ser PRIVATE    -0.25
+ *
+ *
  */
-public class DAOOscar
+class DAOOscar
 {
-    private static String IP;
-    private static String puerto;
-    private static String usuario;
-    private static String contra;
-    private static String URI;
-    private static String driver;
+    private String IP;
+    private String puerto;
+    private String usuario;
+    private String contra;
+    private String URI;
+    private String driver;
     /************************ GETTERS & SETTERS ************************/
     /**
      * Constructor sin parametros
      */
-    public DAOOscar()
-    {
-        IP="";
-        puerto ="";
-        usuario="";
-        contra="";
-        URI = "";
-        driver = "";
-    }
+    DAOOscar() {}
     /**
      * Constructor con parametros:
      * @param IP - IP del servidor
@@ -46,7 +45,7 @@ public class DAOOscar
      * @param driver - driver de conexion
      *
      */
-    public DAOOscar(String IP, String puerto, String usuario, String contra, String URI, String driver){
+     DAOOscar(String IP, String puerto, String usuario, String contra, String URI, String driver){
         this.IP=IP;
         this.puerto= puerto;
         this.usuario=usuario;
@@ -59,90 +58,90 @@ public class DAOOscar
      * getIP Obtener la IP
      * @return  Ip de la maquina (String)
      */
-    public static String getIP() {
-        return IP;
+    public String getIP() {
+        return this.IP;
     }
     /**
      * setIP Fijar IP maquina
      * @param IP - Ip de la maquina
      */
-    public static void setIP(String IP) {
-        DAOOscar.IP = IP;
+    public void setIP(String IP) {
+        this.IP = IP;
     }
 
     /**
      * getPuerto Obterner el puerto
      * @return puerto del servicio
      */
-    public static String getPuerto() {
-        return puerto;
+    public String getPuerto() {
+        return this.puerto;
     }
     /**
      * SetPuerto Fijar el puerto del servicio
      * @param puerto - puerto del servicio
      */
-    public static void setPuerto(String puerto) {
-        DAOOscar.puerto = puerto;
+    public void setPuerto(String puerto) {
+        this.puerto = puerto;
     }
 
     /**
      * getUsuario Obtener usuario
      * @return Usuario (String)
      */
-    public static String getUsuario() {
-        return usuario;
+    public String getUsuario() {
+        return this.usuario;
     }
     /**
      * setUsuario Fijar usuario
      * @param usuario - usuario
      */
-    public static void setUsuario(String usuario) {
-        DAOOscar.usuario = usuario;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     /**
      * getContra Obtener contraseña
      * @return  Contraseña
      */
-    public static String getContra() {
-        return contra;
+    public String getContra() {
+        return this.contra;
     }
     /**
      * setContra Fijar la cosntraseña
      * @param contra - constraseña del usuario
      */
-    public static void setContra(String contra) {
-        DAOOscar.contra = contra;
+    public void setContra(String contra) {
+        this.contra = contra;
     }
 
     /**
      * getURI Obtener URL existdb
      * @return  URL existdb
      */
-    public static String getURI() {
-        return URI;
+    public String getURI() {
+        return this.URI;
     }
     /**
      * setURI Fijar url existdb
      * @param URI - uri existdb
      */
-    public static void setURI(String URI) {
-        DAOOscar.URI = URI;
+    public void setURI(String URI) {
+        this.URI = URI;
     }
 
     /**
      * getDriver Obtener driver
      * @return  driver (String)
      */
-    public static String getDriver() {
-        return driver;
+    public String getDriver() {
+        return this.driver;
     }
     /**
      * setDriver Fijar driver
      * @param driver - driver
      */
-    public static void setDriver(String driver) {
-        DAOOscar.driver = driver;
+    public void setDriver(String driver) {
+        this.driver = driver;
     }
 
     /************************ METODOS ************************/
@@ -155,7 +154,7 @@ public class DAOOscar
      * @throws InstantiationException
      * @throws XMLDBException
      */
-    public static Database iniciarDriver() throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
+     private Database iniciarDriver() throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
         Class cl = Class.forName(driver);
         Database database = (Database) cl.newInstance();
         database.setProperty("create-database", "true");
@@ -172,14 +171,14 @@ public class DAOOscar
      * @throws InstantiationException
      * @throws XQException
      */
-    public static void anadirColecionArchivo(String ruta, String coleccion) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException, XQException {
+     void anadirColecionArchivo(String ruta, String coleccion) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException, XQException {
         //Archivo a utilizar
         File f = new File(ruta);
 
         //manejador creado
         DatabaseManager.registerDatabase(iniciarDriver());
         Collection col;
-        String logs = "";
+        String logs;
         if (!(coleccion == null)){
             col = DatabaseManager.getCollection(URI + "/db/" + coleccion, usuario, contra);
             //Escribimod el resultado en el LOG
@@ -220,7 +219,7 @@ public class DAOOscar
      * @param coleccion - Nombre de la coleccion a añadir
      * @throws XMLDBException
      */
-    public static void anadorColeccion(String coleccion) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+     void anadorColeccion(String coleccion) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         //manejador creado
         DatabaseManager.registerDatabase(iniciarDriver());
 
@@ -239,7 +238,7 @@ public class DAOOscar
      * @throws IllegalAccessException
      * @throws InstantiationException
      */
-    public static void  eliminarColeccion(String coleccion) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public void  eliminarColeccion(String coleccion) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         //manejador creado
         DatabaseManager.registerDatabase(iniciarDriver());
 
@@ -256,9 +255,9 @@ public class DAOOscar
      * @return resultado - Devuelve el resutlado de la consulta
      * @throws XQException
      */
-    public static String consulta (String xQuery) throws XQException {
+    public String consulta (String xQuery) throws XQException {
         String resultado = "";
-        String linea = "";
+        String linea;
         XQDataSource xqs = new ExistXQDataSource();
         xqs.setProperty("IP", IP);
         xqs.setProperty("puerto", puerto);
@@ -282,7 +281,7 @@ public class DAOOscar
      * @param mensaje - Mensaje que se guarda en el LOG
      * @return String Log
      */
-    public static String log(String mensaje){
+    private String log(String mensaje){
         Date fecha = new Date();
         String log = fecha.toString()+" "+mensaje;
         BufferedWriter out = null;
