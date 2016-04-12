@@ -10,7 +10,7 @@ import javax.xml.xquery.*;
 import java.io.File;
 import java.io.Serializable;
 
-public class DAO1 implements Serializable
+public class DAO implements Serializable
 {
     private static final String driver = "org.exist.xmldb.DatabaseImpl";
     private String URI;
@@ -21,7 +21,7 @@ public class DAO1 implements Serializable
      * @param IP
      * @param PORT
      */
-    public DAO1(String IP, String PORT)
+    public DAO(String IP, String PORT)
     {
         this.IP = IP;
         this.PORT = PORT;
@@ -111,7 +111,7 @@ public class DAO1 implements Serializable
         database.setProperty("create-database", "true");
         DatabaseManager.registerDatabase(database);
     }
-    public DAO1(){
+    public DAO(){
         System.out.println("\n SI UTILIZAS EL CONSTRUCTOR VACIO TE PETARA EL PROGRAMA");
     }
 

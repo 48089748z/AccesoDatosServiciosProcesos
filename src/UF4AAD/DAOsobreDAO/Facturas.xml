@@ -1,0 +1,9 @@
+<facturas>
+    <factura>
+        <nif_cliente></nif_cliente>
+        <id_producto></id_producto>
+        <precio_unidad></precio_unidad>
+        <precio_total></precio_total>
+        <iva></iva>
+    </factura>
+</facturas>

@@ -1,0 +1,9 @@
+<empleados>
+    <empleado>
+        <id></id>
+        <nombre></nombre>
+        <apellido></apellido>
+        <sueldo></sueldo>
+        <años_trabajados></años_trabajados>
+    </empleado>
+</empleados>

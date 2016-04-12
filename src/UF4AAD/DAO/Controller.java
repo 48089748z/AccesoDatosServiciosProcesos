@@ -14,10 +14,10 @@ public class Controller
     private static String filePath = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/mondial.xml";
     private static String XPathQuery = "/mondial/country/name";
 
-    //EL CODI DEL MAIN NO CAL TOCARLO I EL DEL DAO1 TAMPOC
+    //EL CODI DEL MAIN NO CAL TOCARLO I EL DEL DAO TAMPOC
     public static void main(String[] args) throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException, XQException
     {
-        DAO1 dao1 = new DAO1(IP, PORT);
+        DAO dao1 = new DAO(IP, PORT);
 
         //CLASE PARA CREAR COLLECCION
         dao1.createCollection(adminUsername, adminPassword, yourCollection);
