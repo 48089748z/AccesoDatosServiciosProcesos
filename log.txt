@@ -31,3 +31,7 @@ Tue Apr 12 17:15:14 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/Id
 Tue Apr 12 17:15:14 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/Facturas.xml a la colecion: uriDAOsobreDAO
 Tue Apr 12 17:32:19 CEST 2016 coleccion : uriDAOsobreDAO creada
 Tue Apr 12 17:32:19 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:44:36 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 17:44:36 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml a la colecion: uriDAOsobreDAO
+Tue Apr 12 17:45:32 CEST 2016 coleccion : uriDAOsobreDAO creada
+Tue Apr 12 17:45:32 CEST 2016 Añadido el archivo: /home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml a la colecion: uriDAOsobreDAO

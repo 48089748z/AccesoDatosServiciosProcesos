@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="database" type="databaseType"/>
+  <xs:complexType name="facturaType">
+    <xs:sequence>
+      <xs:element name="nif_cliente">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="48089748z"/>
+            <xs:enumeration value="47091749l"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="id_producto">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="precio_unidad"/>
+      <xs:element type="xs:string" name="precio_total"/>
+      <xs:element type="xs:string" name="iva"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="databaseType">
+    <xs:sequence>
+      <xs:element type="clientesType" name="clientes"/>
+      <xs:element type="empleadosType" name="empleados"/>
+      <xs:element type="facturasType" name="facturas"/>
+      <xs:element type="catalogoType" name="catalogo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clientesType">
+    <xs:sequence>
+      <xs:element type="clienteType" name="cliente" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empleadosType">
+    <xs:sequence>
+      <xs:element type="empleadoType" name="empleado"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="productoType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="nombre"/>
+      <xs:element type="xs:string" name="precio"/>
+      <xs:element type="xs:string" name="stock"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empleadoType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="nombre"/>
+      <xs:element type="xs:string" name="apellido"/>
+      <xs:element type="xs:string" name="sueldo"/>
+      <xs:element type="xs:string" name="años_trabajados"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="catalogoType">
+    <xs:sequence>
+      <xs:element type="productoType" name="producto"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="facturasType">
+    <xs:sequence>
+      <xs:element type="facturaType" name="factura" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clienteType">
+    <xs:sequence>
+      <xs:element name="nif">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="48089748z"/>
+            <xs:enumeration value=""/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nombre">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="oriol"/>
+            <xs:enumeration value=""/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="apellido">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="cuñado"/>
+            <xs:enumeration value=""/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
