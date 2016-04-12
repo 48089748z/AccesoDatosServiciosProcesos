@@ -5,7 +5,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.xquery.XQException;
 import java.io.File;
-
 /**
  * Created by 48089748z on 12/04/16.
  */
@@ -52,15 +51,15 @@ public class DAOsobreDAO {
     }
     public void showAll()
     {
-        try
+       try
         {
-            JAXBContext context = JAXBContext.newInstance(Database.class);
+            JAXBContext context = JAXBContext.newInstance(DatabaseType.class);
             Unmarshaller UMS = context.createUnmarshaller();
-            Database RST = (Database) UMS.unmarshal(databaseFile);
+            DatabaseType RST = (DatabaseType) UMS.unmarshal(databaseFile);
 
-            for (int x=0; x<RST.getArrayClientes().size(); x++)
+            for (int x=0; x<RST.getClientes().getCliente().size(); x++)
             {
-                System.out.println(RST.getArrayClientes().get(x).getNombre());
+                System.out.println(RST.getClientes().getCliente().get(x).getNombre());
             }
         }
         catch (JAXBException e)
