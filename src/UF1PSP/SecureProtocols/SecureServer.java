@@ -12,7 +12,8 @@ import java.net.InetSocketAddress;
  */
 public class SecureServer
 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException
+    {
         SSLServerSocketFactory ssf = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
         SSLServerSocket sss = (SSLServerSocket) ssf.createServerSocket();
 
@@ -20,7 +21,6 @@ public class SecureServer
         sss.bind(address);
 
         SSLSocket ss = (SSLSocket) sss.accept();
-
         InputStream is = ss.getInputStream();
         byte[] men = new byte[25];
         is.read(men);

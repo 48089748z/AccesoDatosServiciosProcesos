@@ -16,7 +16,6 @@ public class SignaturaDigital
     private static  File file = new File(ORIGINAL_FILE);
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, ClassNotFoundException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchPaddingException
     {
-        //NO GUARDO LES CLAUS A UN FITXER
         if(!Utils.areKeysPresent())
         {
             keyPair = Utils.generateKeys();
@@ -27,6 +26,7 @@ public class SignaturaDigital
         byte[] fileHash = Utils.getHash(file,"MD5");
         byte[] encrypted = Utils.encrypt(fileHash, privateKey);
         Utils.write(STAMPED_FILE, Utils.concatenateByteArrays(Utils.read(file), encrypted));
+
         byte[] decryptedHash = Utils.decrypt(encrypted, publicKey);
         String hash1 = new String(fileHash,"UTF-8");
         String hash2 = new String (decryptedHash, "UTF-8");
