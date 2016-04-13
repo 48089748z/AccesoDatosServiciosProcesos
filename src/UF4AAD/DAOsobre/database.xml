@@ -16,6 +16,11 @@
             <name>Alejandro</name>
             <surname>Soriano</surname>
         </client>
+        <client>
+            <nif>777777</nif>
+            <name>7777777</name>
+            <surname>777777777</surname>
+        </client>
     </clients>
     <employees>
         <employee>
@@ -31,6 +36,13 @@
             <surname>Remon</surname>
             <salary>8302€</salary>
             <years_worked>15</years_worked>
+        </employee>
+        <employee>
+            <id>000</id>
+            <name>SERGIO</name>
+            <surname>BARJOLA</surname>
+            <salary>0e</salary>
+            <years_worked>1</years_worked>
         </employee>
     </employees>
     <bills>
@@ -54,6 +66,13 @@
             <price_each>111</price_each>
             <price_total>111</price_total>
             <iva>11</iva>
+        </bill>
+        <bill>
+            <nif_client>FACTURAAAAH</nif_client>
+            <id_product>FACTURAAAAH</id_product>
+            <price_each>FACTURAAAH</price_each>
+            <price_total>FACTURAHAAHHA</price_total>
+            <iva>FAF2389234892</iva>
         </bill>
     </bills>
     <catalog>

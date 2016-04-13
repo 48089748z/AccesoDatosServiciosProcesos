@@ -14,8 +14,7 @@ public class Controller
         dao2 = new DAOsobreDAO();
         menu();
     }
-    public static void menu() throws JAXBException
-    {
+    public static void menu() throws JAXBException, XMLDBException, ClassNotFoundException, XQException, InstantiationException, IllegalAccessException {
         Scanner in = new Scanner(System.in);
         boolean stop = false;
         while (stop==false)
@@ -33,7 +32,6 @@ public class Controller
                 case "0":
                 {
                     dao2.showAll();
-                    dao2.saveToExistsDB();
                     break;
                 }
                 case "1":

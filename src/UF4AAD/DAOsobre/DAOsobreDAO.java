@@ -15,19 +15,18 @@ import java.util.Scanner;
 class DAOsobreDAO
 {
     private static Scanner in = new Scanner(System.in);
+    private static DAOOscar dao1;
     private static DatabaseType DATABASE;
     private static JAXBContext CONTEXT;
     private static final String DRIVER = "org.exist.xmldb.DatabaseImpl";
     private static final String IP = "172.31.101.225";
     private static final String PORT = "8080";
-    private static String databasePath = "C:\\Users\\uRi\\IdeaProjects\\AccesoDatosServiciosProcesos\\src\\UF4AAD\\DAOsobre\\database.xml";
+    private static String myCollection = "uriDAOsobreDAO";
+    private static String databasePath = "/home/48089748z/Escriptori/IdeaProjects/AccesoDatosServiciosProcesos/src/UF4AAD/DAOsobre/database.xml";
     private static File databaseFile = new File(databasePath);
 
-    void saveToExistsDB()
-    {
-        //AQUI SOLO HE DE HACER UN UPDATE DEL ARCHIVO XML database.xml A EXISTSDB PARA QUE SE GUARDEN LOS CAMBIOS HECHOS
-
-    }
+    void saveToExistsDB() throws XMLDBException, ClassNotFoundException, InstantiationException, IllegalAccessException, XQException
+    {dao1.anadirColecionArchivo(databasePath, myCollection);}
     void añadirProducto() throws JAXBException
     {
         System.out.println("ID del Producto");
@@ -281,9 +280,8 @@ class DAOsobreDAO
         String URI = "xmldb:exist://" + IP + ":" + PORT + "/exist/xmlrpc";
         String adminUsername = "admin";
         String adminPassword = "dionis";
-        String myCollection = "uriDAOsobreDAO";
 
-        DAOOscar dao1 = new DAOOscar(IP, PORT, adminUsername, adminPassword, URI, DRIVER);
+        dao1 = new DAOOscar(IP, PORT, adminUsername, adminPassword, URI, DRIVER);
         dao1.anadorColeccion(myCollection);
         dao1.anadirColecionArchivo(databasePath, myCollection);
     }
